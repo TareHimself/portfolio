@@ -1,0 +1,95 @@
+#Intro{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;    
+}
+
+#Intro .content-row{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#Intro h3 {
+    text-align: center;
+}
+
+#Intro div h2 {
+    text-align: center;
+}
+
+@keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    }
+
+}
+
+#Intro .animated-text-typing{
+    opacity: 1;
+}
+
+#Intro .animated-text{
+    animation: blink 2s linear infinite;
+}
+
+#Intro button{
+  position: absolute;
+  top: 90%;
+  transform: translateY(-50%);
+  padding: 6px;
+  border-radius: 50%;
+  font-size: 30px;
+}
+
+#Contact {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+ position: relative;
+  display: flex;
+  min-width: 400px;
+  width: fit-content;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form div label {
+  position: relative;
+  width: 100%;
+  margin: 0 5px;
+}
+
+form div label input {
+  width: calc(100% - 8px);
+}
+
+form label[aria-label="areaContainer"] {
+  position: relative;
+  margin: 0 5px;
+}
+
+form label[aria-label="areaContainer"] textarea{
+  width: calc(100% - 8px);
+  height: 200px;
+  resize: none;
+}
+
