@@ -8,7 +8,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #121212;
+  background-color: var(--level0);
   width: 100vw;
   overflow-y: overlay;
 
@@ -19,7 +19,6 @@ body {
   --button-hover: #00ff37;
   --scroll: white;
   --text0: white;
-
 }
 
 /* width */
@@ -55,7 +54,7 @@ h1 {
 h2 {
   font-family: 'Roboto', sans-serif;
   font-weight: normal;
-  font-size: 30px;
+  font-size: 50px;
   display: block;
   color: var(--text0);
   margin: 2px;
@@ -107,9 +106,12 @@ button:hover {
 
 section {
   padding: 5% 10%;
+  box-sizing: border-box;
   min-height: 100vh;
   display: flex;
-
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 #root {
@@ -129,7 +131,7 @@ section {
 
 .outer-section {
   width: 100%;
-  min-height: 100vh;
+  min-height: fit-content;
 }
 
 .outer-section::after {
@@ -140,4 +142,45 @@ section {
   width: 80%;
   margin: 0 10%;
   background: var(--section-sep);
+}
+
+
+@media only screen and (max-width: 720px) {
+  h1 {
+
+    font-size: 70px;
+
+  }
+
+  h2 {
+
+    font-size: 40px;
+
+  }
+
+  h3 {
+
+    font-size: 25px;
+
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h1 {
+
+    font-size: 50px;
+
+  }
+
+  h2 {
+
+    font-size: 30px;
+
+  }
+
+  h3 {
+
+    font-size: 20px;
+
+  }
 }

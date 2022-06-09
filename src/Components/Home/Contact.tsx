@@ -1,5 +1,5 @@
-import '../../css/home.css';
-import React, { SyntheticEvent, useCallback } from 'react';
+import "../../css/home.css";
+import React, { SyntheticEvent } from "react";
 
 function Contact() {
 
@@ -10,6 +10,7 @@ function Contact() {
 
 	return (<div className="outer-section">
 		<section id="Contact">
+			<h2>Contact</h2>
 			<form onSubmit={handleForm}>
 				<span>
 					<label>
@@ -24,7 +25,7 @@ function Contact() {
 				<span>
 					<label>
 						Subject
-						<input type="text" placeholder={'What\'s the message about?'} />
+						<input type="text" placeholder={"What's the message about?"} />
 					</label>
 				</span>
 				<span>

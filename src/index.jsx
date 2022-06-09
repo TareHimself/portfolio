@@ -1,13 +1,12 @@
-import './css/main.css';
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
-import { render } from 'react-dom';
+import "./css/main.css";
+import React, { useEffect } from "react";
+import ReactDOM from "react-dom";
 import {
 	BrowserRouter,
 	Routes,
 	Route,
-} from 'react-router-dom';
-import { Home } from './routes/routes';
+} from "react-router-dom";
+import { Home } from "./routes/routes";
 
 function App() {
 	useEffect(() => {
@@ -15,7 +14,7 @@ function App() {
 		const docWidth = document.documentElement.offsetWidth;
 
 		[].forEach.call(
-			document.querySelectorAll('*'),
+			document.querySelectorAll("*"),
 			function (el) {
 				if (el.offsetWidth > docWidth) {
 					console.log(el);
@@ -38,6 +37,6 @@ ReactDOM.render(
 	<React.StrictMode>
 		<App />
 	</React.StrictMode>,
-	document.getElementById('root')
+	document.getElementById("root")
 );
 

@@ -1,3 +1,8 @@
+body {
+	--project-rows: 3;
+	--project-width: 500px;
+}
+
 #Intro {
 	display: flex;
 	align-items: center;
@@ -36,6 +41,10 @@
 
 }
 
+section h2 {
+	margin-bottom: 90px;
+}
+
 #Intro .animated-text-typing {
 	opacity: 1;
 }
@@ -58,16 +67,94 @@
 	height: 30px;
 }
 
-#Contact {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+.projects-grid {
+	display: inline-grid;
+	grid-row-gap: 10px;
+	grid-column-gap: 10px;
+	grid-template-columns: repeat(var(--project-rows), var(--project-width));
+	grid-template-rows: inherit;
+	justify-content: space-between;
 }
+
+.projects-grid-item {
+	display: flex;
+	flex-direction: column;
+	height: fit-content;
+	align-items: center;
+	justify-content: flex-start;
+	transition: .8s ease;
+	position: relative;
+}
+
+.projects-grid-item-overlay {
+	position: relative;
+	width: 100%;
+	border-radius: 10px;
+	aspect-ratio: 1.6;
+	overflow: hidden;
+	display: flex;
+
+}
+
+.projects-grid-item-overlay div {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transition: .3s ease;
+	background-color: #2626269e;
+	opacity: 0;
+}
+
+.projects-grid-item:hover div div {
+	opacity: 1;
+}
+
+.projects-grid-item:hover .projects-tag-container {
+	background-color: transparent;
+}
+
+.projects-grid-item div img {
+	object-fit: cover;
+	width: 100%;
+}
+
+.projects-grid-item span {
+	display: flex;
+	width: 100%;
+	height: 30%;
+	gap: 2%;
+}
+
+.projects-grid-item span button {
+	width: 100%;
+	margin-top: 5px;
+	border-radius: 10px;
+}
+
+.projects-tag-container {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	background-color: #2626269e;
+	padding-right: 6px;
+	border-radius: 20px 0px 20px 0px;
+	transition: .3s ease;
+}
+
+.projects-tag-icon {
+	color: white;
+	font-size: 25px;
+	margin: 10px;
+}
+
 
 form {
 	position: relative;
 	display: flex;
-	min-width: 400px;
+	min-width: 300px;
 	width: 80%;
 	flex-direction: column;
 	align-items: stretch;
@@ -132,4 +219,30 @@ form span {
 .contact-submit button {
 	width: 200px;
 
+}
+
+@media only screen and (max-width: 1600px) {
+	section h2 {
+		margin-bottom: 30px;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	form span {
+		flex-direction: column;
+	}
+
+
+}
+
+@media only screen and (max-width: 700px) {
+	body {
+		--project-width: 400px;
+	}
+}
+
+@media only screen and (max-width: 500px) {
+	body {
+		--project-width: 300px;
+	}
 }
