@@ -8,13 +8,14 @@ export function useProjectsApi(): [IApiProject[], () => Promise<IApiProject[]>] 
 
 	// currently uses sample data, will need to be updated in the future
 	const fetchProjects = useCallback(async () => {
-		const result = [{
+		const result: IApiProject[] = [{
 			id: "1",
 			name: "wallpaperz",
 			tags: "desktop-app,back-end,react,electron",
 			github: "https://github.com/TareHimself/wallpaper-app",
 			demo: "https://umeko.dev/",
 			thumb: "https://b.catgirlsare.sexy/V35bBVSwBqog.png",
+			demo_prompt: "download"
 		}, {
 			id: "2",
 			name: "Umeko.dev",
@@ -22,6 +23,7 @@ export function useProjectsApi(): [IApiProject[], () => Promise<IApiProject[]>] 
 			github: "https://github.com/TareHimself/umeko-js-dashboard",
 			demo: "https://umeko.dev/",
 			thumb: "https://b.catgirlsare.sexy/ssoOOORV16qD.png",
+			demo_prompt: "live"
 		}];
 
 		setProjects(result);

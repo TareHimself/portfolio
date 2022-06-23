@@ -44,7 +44,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 			</div>
 			<div className="projects-tag-container">{tags.map(tag => <TagIcon key={tag} tag={tag} className="projects-tag-icon" />)}</div>
 			<span>
-				{project.demo.length && <button onClick={() => { window.open(project.demo); }} >Live</button>} {project.github.length && <button onClick={() => { window.open(project.github); }} >GitHub</button>}
+				{project.demo.length && <button onClick={() => { window.open(project.demo); }} >{project.demo_prompt[0].toUpperCase() + project.demo_prompt.slice(1)}</button>} {project.github.length && <button onClick={() => { window.open(project.github); }} >GitHub</button>}
 			</span>
 
 		</div>

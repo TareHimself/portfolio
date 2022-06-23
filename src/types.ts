@@ -8,4 +8,5 @@ export interface IApiProject {
 	github: string;
 	demo: string;
 	thumb: string;
+	demo_prompt: "live" | "download"
 }
