@@ -32,6 +32,10 @@
         "semi": [
             "error",
             "always"
+        ],
+        "linebreak-style": [
+            "error",
+            "windows"
         ]
     }
 }
