@@ -1,29 +1,29 @@
-import React from "react";
-import { IApiProject, tag } from "../../../types";
-import { BsServer } from "react-icons/bs";
-import { GoDeviceDesktop, GoDeviceMobile } from "react-icons/go";
-import { MdWeb } from "react-icons/md";
-import { AiOutlineApi } from "react-icons/ai";
-import { GrReactjs } from "react-icons/gr";
-import { IoLogoElectron } from "react-icons/io5";
-import { IconType } from "react-icons";
+import React from 'react';
+import { BsServer } from 'react-icons/bs';
+import { GoDeviceDesktop, GoDeviceMobile } from 'react-icons/go';
+import { MdWeb } from 'react-icons/md';
+import { AiOutlineApi } from 'react-icons/ai';
+import { GrReactjs } from 'react-icons/gr';
+import { IoLogoElectron } from 'react-icons/io5';
+import { IconType } from 'react-icons';
+import { IApiProject, tag } from '../../../types';
 
 export type ProjectItemProps = { project: IApiProject }
 
+// eslint-disable-next-line react/require-default-props
 export type TagIconProps = { tag: tag, className?: string }
 
 const icons: Record<tag, IconType | null> = {
-	"api": AiOutlineApi,
-	"back-end": BsServer,
-	"desktop-app": GoDeviceDesktop,
-	"front-end": MdWeb,
-	"mobile-app": GoDeviceMobile,
-	"react": GrReactjs,
-	"electron": IoLogoElectron
+	api: AiOutlineApi,
+	'back-end': BsServer,
+	'desktop-app': GoDeviceDesktop,
+	'front-end': MdWeb,
+	'mobile-app': GoDeviceMobile,
+	react: GrReactjs,
+	electron: IoLogoElectron,
 };
 
 function TagIcon({ tag, className }: TagIconProps) {
-
 	const Icon = icons[tag];
 
 	if (!Icon) return null;
@@ -32,19 +32,20 @@ function TagIcon({ tag, className }: TagIconProps) {
 }
 
 export default function ProjectItem({ project }: ProjectItemProps) {
-
-	const tags: tag[] = project.tags.split(",") as tag[];
+	const tags: tag[] = project.tags.split(',') as tag[];
 
 	return (
 		<div className="projects-grid-item">
 
 			<div className="projects-grid-item-overlay">
-				<div ></div>
+				<div />
 				<img src={project.thumb} />
 			</div>
-			<div className="projects-tag-container">{tags.map(tag => <TagIcon key={tag} tag={tag} className="projects-tag-icon" />)}</div>
+			<div className="projects-tag-container">{tags.map((tag) => <TagIcon key={tag} tag={tag} className="projects-tag-icon" />)}</div>
 			<span>
-				{project.demo.length && <button onClick={() => { window.open(project.demo); }} >{project.demo_prompt[0].toUpperCase() + project.demo_prompt.slice(1)}</button>} {project.github.length && <button onClick={() => { window.open(project.github); }} >GitHub</button>}
+				{project.demo.length && <button onClick={() => { window.open(project.demo); }}>{project.demo_prompt[0].toUpperCase() + project.demo_prompt.slice(1)}</button>}
+				{' '}
+				{project.github.length && <button onClick={() => { window.open(project.github); }}>GitHub</button>}
 			</span>
 
 		</div>
