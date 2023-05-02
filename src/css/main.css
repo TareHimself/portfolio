@@ -12,7 +12,7 @@ body {
 	width: 100vw;
 	overflow-y: overlay;
 
-	--level0: rgb(202, 202, 202);
+	--level0: #101114;
 	--highlight-color: rgb(123, 255, 145);
 	--section-sep: #ffffff7e;
 	--button: white;
