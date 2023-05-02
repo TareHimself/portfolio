@@ -21,6 +21,47 @@ body {
 	--text0: white;
 }
 
+#root {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	margin: 0;
+	background-color: var(--level0);
+}
+
+#content {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	overflow: overlay;
+}
+
+#socials {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	left: 0%;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: #191a1d;
+	border-radius: 0px 20px 20px 0px;
+	z-index: 3;
+
+}
+
+#socials svg {
+	display: flex;
+	color: white;
+	font-size: 30px;
+	margin: 10px;
+	transition: all ease-in-out 0.3s;
+	cursor: pointer;
+}
+
+#socials svg:hover {
+	color: var(--button-hover);
+}
+
 /* width */
 ::-webkit-scrollbar {
 	width: 10px;
@@ -90,18 +131,23 @@ button {
 	background: transparent;
 	border: solid 3px var(--button);
 	color: var(--button);
-	font-family: 'Roboto', sans-serif;
-	font-weight: 500;
-	padding: 10px 30px;
-	font-size: 25px;
-	transition: all ease-in-out 0.5s;
-	text-align: end;
 	border-radius: 10px;
+	padding: 0;
+	height: 40px;
+	transition: all ease-in-out 0.3s;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
 }
 
 button:hover {
 	border: solid 3px var(--button-hover);
 	color: var(--button-hover);
+}
+
+button h2 {
+	margin: 0;
+	font-size: 18px;
 }
 
 section {
@@ -112,14 +158,10 @@ section {
 	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+	position: relative;
 }
 
-#root {
-	width: 100%;
-	min-height: 100vh;
-	margin: 0;
-	background-color: var(--level0);
-}
+
 
 .page {
 	min-height: 100vh;
@@ -127,6 +169,8 @@ section {
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
+	box-sizing: border-box;
+	padding: 0 52px;
 }
 
 .outer-section {
@@ -134,7 +178,10 @@ section {
 	min-height: fit-content;
 }
 
-.outer-section::after {
+
+
+/* Line between sections */
+/* .outer-section::after {
 	content: "";
 	display: block;
 	position: relative;
@@ -142,8 +189,19 @@ section {
 	width: 80%;
 	margin: 0 10%;
 	background: var(--section-sep);
-}
+} */
 
+
+@media only screen and (max-width: 760px) {
+	#socials {
+		flex-direction: row;
+		left: 50%;
+		top: 100%;
+		transform: translate(-50%, -100%);
+		justify-content: center;
+		border-radius: 20px 20px 0 0;
+	}
+}
 
 @media only screen and (max-width: 720px) {
 	h1 {

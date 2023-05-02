@@ -7,9 +7,7 @@ import { IoLogoElectron } from "react-icons/io5";
 import { IconType } from "react-icons";
 import { SiPytorch, SiPython, SiTypescript, SiNodedotjs } from "react-icons/si";
 import { ProjectTagTypes } from "../../../types";
-import React from "react";
 
-// eslint-disable-next-line react/require-default-props
 export type TagIconProps = { tag: ProjectTagTypes; className?: string };
 
 const TAG_ICONS: Record<ProjectTagTypes, IconType | null> = {
@@ -42,9 +40,10 @@ const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
 
 export default function ProjectTag({ tag, className }: TagIconProps) {
 	const Icon = TAG_ICONS[tag];
+
 	const tooltipText = TAG_ICONS_TOOLTIP[tag];
 
 	if (!Icon) return null;
 
-	return <Icon className={className} />;
+	return <Icon className={className} data-tooltip={tooltipText} />;
 }

@@ -11,11 +11,35 @@ body {
 }
 
 #Intro .content-row {
-	position: absolute;
+	/* position: absolute; */
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: flex-start;
+}
+
+@keyframes typewriter-blink {
+	0% {
+		opacity: 1;
+	}
+
+	50% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+.typewriter-symbol {
+	font-weight: lighter;
+
+	color: var(--highlight-color);
+}
+
+.typewriter-symbol[data-typing="false"] {
+	animation: typewriter-blink 1s linear infinite;
 }
 
 #Intro h3 {
@@ -41,25 +65,20 @@ body {
 
 }
 
-section h2 {
+section>h2 {
 	margin-bottom: 90px;
 }
 
-#Intro .animated-text-typing {
-	opacity: 1;
-}
-
-#Intro .animated-text {
-	animation: blink 2s linear infinite;
-}
-
 #Intro button {
+	--size: 60px;
 	position: absolute;
 	top: 90%;
 	transform: translateY(-50%);
-	padding: 6px;
+	/* padding: 6px; */
 	border-radius: 50%;
 	font-size: 30px;
+	width: var(--size);
+	height: var(--size);
 }
 
 #project-search {
@@ -82,7 +101,7 @@ section h2 {
 	height: fit-content;
 	align-items: center;
 	justify-content: flex-start;
-	transition: .8s ease;
+	transition: .3s ease;
 	position: relative;
 }
 
@@ -96,7 +115,7 @@ section h2 {
 
 }
 
-.projects-grid-item-overlay div {
+.projects-grid-item-overlay .item-overlay {
 	position: absolute;
 	display: flex;
 	top: 0;
@@ -107,15 +126,17 @@ section h2 {
 	background-color: #2626269e;
 	opacity: 0;
 	align-items: center;
+	box-sizing: border-box;
+	padding: 45px 20px;
 }
 
 .projects-grid-item-overlay h3 {
-	font-size: 18px;
+	font-size: 22px;
 	text-align: center;
 	width: 100%;
 	margin: 0;
 	box-sizing: border-box;
-	padding: 0 20px;
+	/* padding: 0 20px; */
 
 }
 
@@ -123,7 +144,8 @@ section h2 {
 	opacity: 1;
 }
 
-.projects-grid-item:hover .projects-tag-container .projects-title-container {
+.projects-grid-item:hover .projects-tag-container,
+.projects-grid-item:hover .projects-title-container {
 	background-color: transparent;
 }
 
@@ -146,14 +168,10 @@ section h2 {
 }
 
 .projects-grid-item span button {
-	display: flex;
+
 	width: 100%;
 	margin-top: 5px;
-	border-radius: 10px;
-	padding: 0;
-	height: 39px;
-	align-items: center;
-	justify-content: center;
+
 	/* max-width: 50%; */
 }
 
@@ -161,11 +179,10 @@ section h2 {
 .projects-title-container {
 	position: absolute;
 	display: flex;
-
 	background-color: #2626269e;
-	padding-right: 6px;
-
+	padding: 0 6px;
 	transition: .3s ease;
+	height: 45px;
 }
 
 .projects-tag-container {
@@ -177,7 +194,15 @@ section h2 {
 .projects-title-container {
 	bottom: 0;
 	right: 0;
-	border-radius: 0px 20px 0px 20px;
+	border-radius: 20px 0px 20px 0px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.projects-title-container h2 {
+	margin: 0 10px;
+	font-size: 20px;
 }
 
 .projects-tag-icon {
@@ -195,6 +220,7 @@ form {
 	flex-direction: column;
 	align-items: stretch;
 	justify-content: flex-start;
+	gap: 10px;
 }
 
 form div {
@@ -207,9 +233,10 @@ form label {
 	width: 100%;
 	font-family: 'Roboto', sans-serif;
 	font-weight: normal;
-	font-size: 30px;
+	font-size: 20px;
+	gap: 10px;
 	color: white;
-	margin: 2px;
+	/* margin: 2px; */
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
@@ -217,10 +244,11 @@ form label {
 
 form label input {
 	height: 40px;
-	width: calc(100% - 28px);
+	width: 100%;
 	border-radius: 10px;
 	border: 0px;
 	padding: 0 10px;
+	box-sizing: border-box;
 }
 
 
@@ -230,12 +258,13 @@ form label[aria-label="areaContainer"] {
 }
 
 form textarea {
-	width: calc(100% - 28px);
+	width: 100%;
 	height: 200px;
 	resize: none;
 	border-radius: 10px;
 	border: 0px;
 	padding: 10px 10px;
+	box-sizing: border-box;
 }
 
 form span {
@@ -258,8 +287,12 @@ form span {
 }
 
 @media only screen and (max-width: 1600px) {
-	section h2 {
+	section>h2 {
 		margin-bottom: 30px;
+	}
+
+	#Intro button {
+		--size: 40px
 	}
 }
 

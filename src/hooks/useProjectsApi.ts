@@ -17,6 +17,7 @@ export function useProjectsApi(): [
 				github_uri: "https://github.com/TareHimself/wallpaper-app",
 				demo_uri: "https://umeko.dev/",
 				thumb: "https://files.oyintare.dev/BzhlBg6Dljk0.jpg",
+				description: "Sample",
 			},
 			{
 				id: "2",
@@ -25,6 +26,7 @@ export function useProjectsApi(): [
 				github_uri: "https://github.com/TareHimself/umeko-js-dashboard",
 				demo_uri: "live|https://umeko.dev/",
 				thumb: "https://files.oyintare.dev/BzhlBg6Dljk0.jpg",
+				description: "Sample",
 			},
 			{
 				id: "3",
@@ -33,6 +35,8 @@ export function useProjectsApi(): [
 				github_uri: "https://github.com/TareHimself/wallpaper-app",
 				demo_uri: "https://umeko.dev/",
 				thumb: "https://files.oyintare.dev/BzhlBg6Dljk0.jpg",
+				description:
+					"A wallpaper app built with electron-forge and react",
 			},
 			{
 				id: "4",
@@ -41,13 +45,14 @@ export function useProjectsApi(): [
 				github_uri: "https://github.com/TareHimself/umeko-js-dashboard",
 				demo_uri: "live|https://umeko.dev/",
 				thumb: "https://files.oyintare.dev/BzhlBg6Dljk0.jpg",
+				description: "A website built for my discord bot",
 			},
 		];
 
 		setProjects(result);
 
 		return result;
-	}, [projects, setProjects]);
+	}, [setProjects]);
 
 	return [projects, fetchProjects];
 }

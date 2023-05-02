@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useProjectsApi } from "../../hooks/useProjectsApi";
 import ProjectItem from "./Projects/ProjectItem";
 
@@ -7,7 +7,7 @@ function Projects() {
 
 	useEffect(() => {
 		fetchProjects();
-	}, []);
+	}, [fetchProjects]);
 
 	useEffect(() => {
 		function onResize() {

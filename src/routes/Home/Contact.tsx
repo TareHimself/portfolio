@@ -1,4 +1,4 @@
-import React, { SyntheticEvent } from "react";
+import { SyntheticEvent } from "react";
 
 function Contact() {
 	function handleForm(e: SyntheticEvent<HTMLFormElement>) {
@@ -18,6 +18,8 @@ function Contact() {
 								placeholder="Your email please."
 							/>
 						</label>
+					</span>
+					<span>
 						<label>
 							Name
 							<input
@@ -42,7 +44,9 @@ function Contact() {
 						</label>
 					</span>
 					<span className="contact-submit">
-						<button>Send</button>
+						<button>
+							<h2>Send</h2>
+						</button>
 					</span>
 				</form>
 			</section>

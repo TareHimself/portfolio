@@ -1,5 +1,4 @@
 import "./css/home.css";
-import React from "react";
 import Intro from "./Intro";
 import Contact from "./Contact";
 import Projects from "./Projects";

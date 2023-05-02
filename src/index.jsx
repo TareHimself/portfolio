@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home } from "./routes/exports";
+import Socials from "./Socials";
 
 function App() {
 	useEffect(() => {
@@ -16,9 +17,12 @@ function App() {
 	});
 	return (
 		<BrowserRouter>
-			<Routes>
-				<Route path="/" element={<Home />} />
-			</Routes>
+			<Socials />
+			<div id="content">
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</div>
 		</BrowserRouter>
 	);
 }

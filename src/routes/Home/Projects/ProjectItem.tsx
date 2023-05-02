@@ -1,5 +1,3 @@
-import React from "react";
-
 import { IApiProject, ProjectTagTypes } from "../../../types";
 import ProjectTag from "./ProjectTag";
 
@@ -13,25 +11,25 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 	return (
 		<div className="projects-grid-item">
 			<div className="projects-grid-item-overlay">
-				<div>
-					<h3>
-						Lorem, ipsum dolor sit amet consectetur adipisicing elit
-					</h3>
+				<div className="item-overlay">
+					<h3>{project.description}</h3>
 				</div>
+				<div className="projects-tag-container">
+					{tags.map((tag) => (
+						<ProjectTag
+							key={tag}
+							tag={tag}
+							className="projects-tag-icon"
+						/>
+					))}
+				</div>
+				<div className="projects-title-container">
+					<h2>{project.name}</h2>
+				</div>
+
 				<img src={project.thumb} />
 			</div>
-			<div className="projects-tag-container">
-				{tags.map((tag) => (
-					<ProjectTag
-						key={tag}
-						tag={tag}
-						className="projects-tag-icon"
-					/>
-				))}
-			</div>
-			<div className="projects-title-container">
-				<h2>{project.name}</h2>
-			</div>
+
 			<span>
 				{project.demo_uri.trim().split("|")[1] && (
 					<button
@@ -54,7 +52,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 							window.open(project.github_uri);
 						}}
 					>
-						<h2>GitHub</h2>
+						<h2>Code</h2>
 					</button>
 				)}
 			</span>
