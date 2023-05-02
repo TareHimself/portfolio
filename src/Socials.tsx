@@ -1,6 +1,7 @@
 import { FaLinkedinIn, FaGithub, FaYoutube } from "react-icons/fa";
 import { SiUnrealengine } from "react-icons/si";
 import { PORTFOLIO_DATA } from "./data";
+import { BsCodeSlash } from "react-icons/bs";
 
 export default function Socials() {
 	return (
@@ -23,6 +24,7 @@ export default function Socials() {
 					window.open(PORTFOLIO_DATA.UNREAL_ENGINE_URL, "_blank")
 				}
 			/>
+			<BsCodeSlash />
 		</div>
 	);
 }

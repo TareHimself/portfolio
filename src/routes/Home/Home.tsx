@@ -1,6 +1,6 @@
 import "./css/home.css";
 import Intro from "./Intro";
-import Contact from "./Contact";
+// import Contact from "./Contact";
 import Projects from "./Projects";
 
 function Home() {
@@ -8,7 +8,7 @@ function Home() {
 		<div className="page">
 			<Intro />
 			<Projects />
-			<Contact />
+			{/* <Contact /> */}
 		</div>
 	);
 }
