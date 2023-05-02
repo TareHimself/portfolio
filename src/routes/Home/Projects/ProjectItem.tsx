@@ -29,6 +29,9 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 					/>
 				))}
 			</div>
+			<div className="projects-title-container">
+				<h2>{project.name}</h2>
+			</div>
 			<span>
 				{project.demo_uri.trim().split("|")[1] && (
 					<button
