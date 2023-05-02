@@ -1,35 +1,65 @@
 import { useCallback, useState } from "react";
 import { IApiProject } from "../types";
 
-export function useProjectsApi(): [IApiProject[], () => Promise<IApiProject[]>] {
-
+export function useProjectsApi(): [
+	IApiProject[],
+	() => Promise<IApiProject[]>
+] {
 	const [projects, setProjects] = useState<IApiProject[]>([]);
-
 
 	// currently uses sample data, will need to be updated in the future
 	const fetchProjects = useCallback(async () => {
-		const result: IApiProject[] = [{
-			id: "1",
-			name: "wallpaperz",
-			tags: "desktop-app,back-end,react,electron",
-			github: "https://github.com/TareHimself/wallpaper-app",
-			demo: "https://umeko.dev/",
-			thumb: "https://b.catgirlsare.sexy/V35bBVSwBqog.png",
-			demo_prompt: "download"
-		}, {
-			id: "2",
-			name: "Umeko.dev",
-			tags: "front-end,back-end,react,api",
-			github: "https://github.com/TareHimself/umeko-js-dashboard",
-			demo: "https://umeko.dev/",
-			thumb: "https://b.catgirlsare.sexy/ssoOOORV16qD.png",
-			demo_prompt: "live"
-		}];
+		const result: IApiProject[] = [
+			{
+				id: "1",
+				name: "Wallpaperz",
+				tags: [
+					"desktop-app",
+					"typescript",
+					"back-end",
+					"react",
+					"electron",
+				],
+				github_uri: "https://github.com/TareHimself/wallpaper-app",
+				demo_uri:
+					"Download|https://github.com/TareHimself/wallpaper-app/releases/latest",
+				thumb: "https://raw.githubusercontent.com/TareHimself/wallpaper-app/main/github-assets/app-example1.png",
+				description:
+					"A full-stack wallpaper app made with typescript, electron, express and sqlite3",
+			},
+			{
+				id: "2",
+				name: "Osu! AI",
+				tags: ["python", "numpy", "opencv", "pytorch"],
+				github_uri: "https://github.com/TareHimself/osu-ai",
+				demo_uri: "Video|https://www.youtube.com/watch?v=YEoSrtow8Qw",
+				thumb: "https://raw.githubusercontent.com/TareHimself/osu-ai/master/assets/good-play-relax.png",
+				description: "Teaching a pytorch model to play the game Osu!",
+			},
+			{
+				id: "3",
+				name: "Manga Translator",
+				tags: ["python", "numpy", "opencv", "pytorch"],
+				github_uri: "https://github.com/TareHimself/manga-translator",
+				demo_uri: "",
+				thumb: "https://raw.githubusercontent.com/TareHimself/manga-translator/master/ja_a_certain_scientific_accelerator_1_001_converted.png",
+				description: "A manga translator made using Yolov8 and open cv",
+			},
+			{
+				id: "4",
+				name: "Umeko",
+				tags: ["front-end", "back-end", "api", "react", "typescript"],
+				github_uri: "https://github.com/TareHimself/umeko-js",
+				demo_uri: "Website|https://umeko.dev/",
+				thumb: "https://files.oyintare.dev/5uAsW3dxqPQv.png",
+				description: "A full-stack discord bot written in typescript.",
+			},
+		];
 
 		setProjects(result);
 
 		return result;
-	}, [projects, setProjects]);
+	}, [setProjects]);
 
 	return [projects, fetchProjects];
 }
