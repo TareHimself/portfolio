@@ -4,13 +4,13 @@ import ProjectTag from "./ProjectTag";
 export type ProjectItemProps = { project: IApiProject };
 
 export default function ProjectItem({ project }: ProjectItemProps) {
-	const tags: ProjectTagTypes[] = project.tags.split(
-		","
-	) as ProjectTagTypes[];
+	const tags: ProjectTagTypes[] = project.tags;
 
+	const [DemoStr, DemoUri] = project.demo_uri.trim().split("|");
 	return (
 		<div className="projects-grid-item">
 			<div className="projects-grid-item-overlay">
+				<img src={project.thumb} />
 				<div className="item-overlay">
 					<h3>{project.description}</h3>
 				</div>
@@ -26,24 +26,16 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 				<div className="projects-title-container">
 					<h2>{project.name}</h2>
 				</div>
-
-				<img src={project.thumb} />
 			</div>
 
 			<span>
-				{project.demo_uri.trim().split("|")[1] && (
+				{DemoStr && DemoUri && (
 					<button
 						onClick={() => {
-							window.open(
-								project.demo_uri.trim().split("|")[1] || ""
-							);
+							window.open(DemoUri);
 						}}
 					>
-						<h2>
-							{project.demo_uri.startsWith("live")
-								? "Live"
-								: "Download"}
-						</h2>
+						<h2>{DemoStr}</h2>
 					</button>
 				)}{" "}
 				{project.github_uri.length && (

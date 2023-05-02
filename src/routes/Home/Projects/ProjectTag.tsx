@@ -5,7 +5,16 @@ import { AiOutlineApi } from "react-icons/ai";
 import { GrReactjs } from "react-icons/gr";
 import { IoLogoElectron } from "react-icons/io5";
 import { IconType } from "react-icons";
-import { SiPytorch, SiPython, SiTypescript, SiNodedotjs } from "react-icons/si";
+import {
+	SiPytorch,
+	SiPython,
+	SiTypescript,
+	SiNodedotjs,
+	SiOpencv,
+	SiNumpy,
+	SiNetlify,
+	SiReplit,
+} from "react-icons/si";
 import { ProjectTagTypes } from "../../../types";
 
 export type TagIconProps = { tag: ProjectTagTypes; className?: string };
@@ -22,20 +31,28 @@ const TAG_ICONS: Record<ProjectTagTypes, IconType | null> = {
 	python: SiPython,
 	node: SiNodedotjs,
 	typescript: SiTypescript,
+	opencv: SiOpencv,
+	numpy: SiNumpy,
+	netlify: SiNetlify,
+	replit: SiReplit,
 };
 
 const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
-	api: "API",
+	api: "Uses external API's",
 	"back-end": "Backend",
 	"desktop-app": "Desktop Application",
 	"front-end": "Web Application",
 	"mobile-app": "Mobile Application",
-	react: "React Framework",
-	electron: "Electron Framework",
-	pytorch: "Pytorch",
-	python: "Python",
-	node: "NodeJS",
-	typescript: "Typescript",
+	react: "Uses React",
+	electron: "Uses Electron",
+	pytorch: "Uses Pytorch",
+	python: "Written in Python",
+	node: "Runs on NodeJS",
+	typescript: "Written inTypescript",
+	opencv: "Uses OpenCV",
+	numpy: "Uses Numpy",
+	netlify: "Hosted On Netlify",
+	replit: "Hosted On Replit",
 };
 
 export default function ProjectTag({ tag, className }: TagIconProps) {

@@ -10,12 +10,16 @@ export type ProjectTagTypes =
 	| "pytorch"
 	| "python"
 	| "node"
-	| "typescript";
+	| "typescript"
+	| "opencv"
+	| "numpy"
+	| "netlify"
+	| "replit";
 
 export interface IApiProject {
 	id: string;
 	name: string;
-	tags: string;
+	tags: ProjectTagTypes[];
 	github_uri: string;
 	demo_uri: string;
 	thumb: string;
