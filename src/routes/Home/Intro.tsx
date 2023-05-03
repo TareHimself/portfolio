@@ -15,7 +15,14 @@ function Intro() {
 		"Quick Learner",
 	]);
 	return (
-		<div className="outer-section">
+		<div
+			className="outer-section"
+			style={{
+				height: "100vh",
+				minHeight: "100vh",
+				maxHeight: "100vh",
+			}}
+		>
 			<section id="Intro">
 				<div className="content-row">
 					<h3 style={{ fontWeight: "normal" }}>

@@ -10,7 +10,8 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: var(--level0);
 	width: 100vw;
-	overflow-y: overlay;
+	height: 100vh;
+	overflow: hidden;
 
 	--level0: #101114;
 	--highlight-color: rgb(123, 255, 145);
@@ -23,7 +24,7 @@ body {
 
 #root {
 	width: 100%;
-	height: 100vh;
+	height: 100%;
 	overflow: hidden;
 	margin: 0;
 	background-color: var(--level0);
@@ -164,13 +165,15 @@ section {
 
 
 .page {
-	min-height: 100vh;
 	width: 100%;
+	height: fit-content;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-start;
 	box-sizing: border-box;
-	padding: 0 52px;
+	padding-left: 52px;
+	padding-right: 52px;
+	padding-bottom: 100px;
 }
 
 .outer-section {
