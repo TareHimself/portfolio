@@ -11,7 +11,7 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 		<div className="projects-grid-item">
 			<div className="projects-grid-item-overlay">
 				<img
-					src={`https://resize.oyintare.dev/500x500/${project.thumb}`}
+					src={`https://resize.oyintare.dev/640x500/${project.thumb}`}
 				/>
 				<div className="item-overlay">
 					<h3>{project.description}</h3>
