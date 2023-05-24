@@ -10,17 +10,21 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 	return (
 		<div className="projects-grid-item">
 			<div className="projects-grid-item-overlay">
-				<img src={project.thumb} />
+				<img
+					src={`https://resize.oyintare.dev/500x500/${project.thumb}`}
+				/>
 				<div className="item-overlay">
 					<h3>{project.description}</h3>
 				</div>
 				<div className="projects-tag-container">
 					{tags.map((tag) => (
-						<ProjectTag
-							key={tag}
-							tag={tag}
-							className="projects-tag-icon"
-						/>
+						<>
+							<ProjectTag
+								key={tag}
+								tag={tag}
+								className="projects-tag-icon"
+							/>
+						</>
 					))}
 				</div>
 				<div className="projects-title-container">
