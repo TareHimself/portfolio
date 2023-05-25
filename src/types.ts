@@ -14,7 +14,8 @@ export type ProjectTagTypes =
 	| "opencv"
 	| "numpy"
 	| "netlify"
-	| "replit";
+	| "replit"
+	| "sqlite";
 
 export interface IApiProject {
 	id: string;

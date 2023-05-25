@@ -14,8 +14,9 @@ export function useProjectsApi(): [
 				id: "1",
 				name: "Wallpaperz",
 				tags: [
-					"desktop-app",
 					"typescript",
+					"desktop-app",
+
 					"back-end",
 					"react",
 					"electron",
@@ -48,11 +49,27 @@ export function useProjectsApi(): [
 			{
 				id: "4",
 				name: "Umeko",
-				tags: ["front-end", "back-end", "api", "react", "typescript"],
+				tags: ["typescript", "front-end", "back-end", "api", "react"],
 				github_uri: "https://github.com/TareHimself/umeko-js",
 				demo_uri: "Website|https://umeko.dev/",
 				thumb: "https://files.oyintare.dev/5uAsW3dxqPQv.png",
-				description: "A full-stack discord bot written in typescript.",
+				description: "A full-stack discord bot written in typescript",
+			},
+			{
+				id: "5",
+				name: "Music App",
+				tags: [
+					"typescript",
+					"desktop-app",
+					"electron",
+					"sqlite",
+					"react",
+				],
+				github_uri: "https://github.com/TareHimself/music-app",
+				demo_uri: "",
+				thumb: "https://raw.githubusercontent.com/TareHimself/music-app/master/.github/sample-01.png",
+				description:
+					"A music app that has a library, playback and imports from external sources",
 			},
 		];
 

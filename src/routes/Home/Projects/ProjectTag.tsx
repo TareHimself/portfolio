@@ -14,6 +14,7 @@ import {
 	SiNumpy,
 	SiNetlify,
 	SiReplit,
+	SiSqlite,
 } from "react-icons/si";
 import { ProjectTagTypes } from "../../../types";
 import { useId } from "react";
@@ -37,6 +38,7 @@ const TAG_ICONS: Record<ProjectTagTypes, IconType | null> = {
 	numpy: SiNumpy,
 	netlify: SiNetlify,
 	replit: SiReplit,
+	sqlite: SiSqlite,
 };
 
 const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
@@ -55,6 +57,7 @@ const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
 	numpy: "Uses Numpy",
 	netlify: "Hosted On Netlify",
 	replit: "Hosted On Replit",
+	sqlite: "Uses SQLite",
 };
 
 export default function ProjectTag({ tag, className }: TagIconProps) {
