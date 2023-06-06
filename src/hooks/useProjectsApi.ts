@@ -44,7 +44,8 @@ export function useProjectsApi(): [
 				github_uri: "https://github.com/TareHimself/manga-translator",
 				demo_uri: "",
 				thumb: "https://raw.githubusercontent.com/TareHimself/manga-translator/master/ja_a_certain_scientific_accelerator_1_001_converted.png",
-				description: "A manga translator made using Yolov8 and open cv",
+				description:
+					"A manga translator made using Yolov8 , OpenCV and DeepFillV2",
 			},
 			{
 				id: "4",

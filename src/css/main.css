@@ -181,6 +181,16 @@ section {
 	min-height: fit-content;
 }
 
+.lazy-image-bg {
+	display: flex;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-size: cover;
+	background-position: center;
+	filter: blur(10px);
+}
+
 
 
 /* Line between sections */

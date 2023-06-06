@@ -10,8 +10,16 @@ export default function ProjectItem({ project }: ProjectItemProps) {
 	return (
 		<div className="projects-grid-item">
 			<div className="projects-grid-item-overlay">
+				<div
+					className="lazy-image-bg"
+					style={{
+						backgroundImage: `url(https://resize.oyintare.dev/64x50/${project.thumb})`,
+					}}
+				></div>
 				<img
 					src={`https://resize.oyintare.dev/640x500/${project.thumb}`}
+					alt="thumb"
+					loading="lazy"
 				/>
 				<div className="item-overlay">
 					<h3>{project.description}</h3>
