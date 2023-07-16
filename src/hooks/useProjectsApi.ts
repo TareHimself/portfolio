@@ -43,7 +43,7 @@ export function useProjectsApi(): [
 				tags: ["python", "numpy", "opencv", "pytorch"],
 				github_uri: "https://github.com/TareHimself/manga-translator",
 				demo_uri: "",
-				thumb: "https://raw.githubusercontent.com/TareHimself/manga-translator/master/ja_a_certain_scientific_accelerator_1_001_converted.png",
+				thumb: "https://raw.githubusercontent.com/TareHimself/manga-translator/master/examples/ui_example.png",
 				description:
 					"A manga translator made using Yolov8 , OpenCV and DeepFillV2",
 			},
