@@ -15,14 +15,20 @@ export type ProjectTagTypes =
 	| "numpy"
 	| "netlify"
 	| "replit"
-	| "sqlite";
+	| "sqlite"
+	| "realm"
+	| "cpp"
+	| "kotlin"
+	| "jetpack-compose"
+	| "android"
+	| "material-design";
 
 export interface IApiProject {
 	id: string;
 	name: string;
 	tags: ProjectTagTypes[];
 	github_uri: string;
-	demo_uri: string;
+	demo_uri: `${'Website' | 'Video' | 'Download'}|${string}` | '';
 	thumb: string;
 	description: string;
 }

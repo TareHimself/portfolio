@@ -52,7 +52,7 @@ export function useProjectsApi(): [
 				name: "Umeko",
 				tags: ["typescript", "front-end", "back-end", "api", "react"],
 				github_uri: "https://github.com/TareHimself/umeko-js",
-				demo_uri: "Website|https://umeko.dev/",
+				demo_uri: "",
 				thumb: "https://files.oyintare.dev/5uAsW3dxqPQv.png",
 				description: "A full-stack discord bot written in typescript",
 			},
@@ -72,6 +72,38 @@ export function useProjectsApi(): [
 				description:
 					"A music app that has a library, playback and imports from external sources",
 			},
+			{
+				id: "6",
+				name: "Mira",
+				tags: [
+					"kotlin",
+					"android",
+					"realm",
+					"material-design",
+					"api"
+				],
+				github_uri: "https://github.com/TareHimself/mira",
+				demo_uri: "",
+				thumb: "https://raw.githubusercontent.com/TareHimself/mira/master/assets/example2.png",
+				description:
+					"A manga app, capable of utilizing the manga translator to translate raw pages.",
+			},
+			// {
+			// 	id: "6",
+			// 	name: "Cv Label",
+			// 	tags: [
+			// 		"typescript",
+			// 		"desktop-app",
+			// 		"electron",
+			// 		"cpp",
+			// 		"realm",
+			// 	],
+			// 	github_uri: "https://github.com/TareHimself/music-app",
+			// 	demo_uri: "",
+			// 	thumb: "https://raw.githubusercontent.com/TareHimself/music-app/master/.github/sample-01.png",
+			// 	description:
+			// 		"A music app that has a library, playback and imports from external sources",
+			// }
 		];
 
 		setProjects(result);

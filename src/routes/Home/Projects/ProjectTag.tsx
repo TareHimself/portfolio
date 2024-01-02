@@ -15,6 +15,12 @@ import {
 	SiNetlify,
 	SiReplit,
 	SiSqlite,
+	SiRealm,
+	SiCplusplus,
+	SiAndroid,
+	SiJetpackcompose,
+	SiKotlin,
+	SiMaterialdesign,
 } from "react-icons/si";
 import { ProjectTagTypes } from "../../../types";
 import { useId } from "react";
@@ -39,6 +45,12 @@ const TAG_ICONS: Record<ProjectTagTypes, IconType | null> = {
 	netlify: SiNetlify,
 	replit: SiReplit,
 	sqlite: SiSqlite,
+	realm: SiRealm,
+	cpp: SiCplusplus,
+	kotlin: SiKotlin,
+	"jetpack-compose": SiJetpackcompose,
+	android: SiAndroid,
+	"material-design": SiMaterialdesign
 };
 
 const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
@@ -52,12 +64,18 @@ const TAG_ICONS_TOOLTIP: Record<ProjectTagTypes, string | null> = {
 	pytorch: "Uses Pytorch",
 	python: "Written in Python",
 	node: "Runs on NodeJS",
-	typescript: "Written inTypescript",
+	typescript: "Written in Typescript",
 	opencv: "Uses OpenCV",
 	numpy: "Uses Numpy",
 	netlify: "Hosted On Netlify",
 	replit: "Hosted On Replit",
 	sqlite: "Uses SQLite",
+	realm: "Uses Realm",
+	cpp: "Written in C++",
+	kotlin: "Written in Kotlin",
+	"jetpack-compose": "Uses Jetpack Compose",
+	android: "Android Application",
+	"material-design": "Uses Material Design"
 };
 
 export default function ProjectTag({ tag, className }: TagIconProps) {
