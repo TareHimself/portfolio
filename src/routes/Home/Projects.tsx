@@ -62,7 +62,7 @@ function Projects() {
 			<section id="Projects">
 				<h2>Projects</h2>
 
-				<div className="projects-grid">
+				<div className="projects-list">
 					{projects.map((project) => (
 						<ProjectItem key={project.id} project={project} />
 					))}
