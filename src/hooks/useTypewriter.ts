@@ -1,150 +1,45 @@
-import { useCallback, useEffect, useState } from "react";
-import { ReturnTypeOrNull } from "../types";
+import { useEffect, useState } from "react";
 
-/**
- *
- * @param values The strings to iterate over
- * @param startIndex The index of {@link values} to start at
- * @param typingRate The rate to type text at in ms
- * @param deleteRate The rate to delete text at in mx
- * @param typingDisplayDelay The delay before deleting text in ms
- * @param typingBreakDelay The delay before typing text in ms
- * @returns
- */
-export default function useTypewriter(
-	values: string[],
-	startIndex = 0,
-	typingRate = 120,
-	deleteRate = 60,
-	typingDisplayDelay = 4000,
-	typingBreakDelay = 700
-): { text: string; isTyping: boolean } {
-	const [typingInterval, setTypingInterval] =
-		useState<ReturnTypeOrNull<typeof setInterval>>(null);
-	const [deletionInterval, setDeletionInterval] =
-		useState<ReturnTypeOrNull<typeof setInterval>>(null);
-	const [waitTimeout, setWaitTimeout] =
-		useState<ReturnTypeOrNull<typeof setTimeout>>(null);
-	const [text, setText] = useState("");
+interface Options {
+	typeMs?: number;
+	deleteMs?: number;
+	holdMs?: number;
+	pauseMs?: number;
+}
 
-	/**
-	 * Used to start the typewriter
-	 * @param initialText The text to start from
-	 * @param index The index of {@link values} to start at
-	 */
-	const startTyping = useCallback(
-		(initialText: string, index: number) => {
-			const targetText = values[index] || "";
-			if (initialText === targetText) {
-				setDeletionInterval((di) => {
-					if (di !== null) {
-						clearInterval(di);
-					}
+export function useTypewriter(
+	words: readonly string[],
+	{ typeMs = 70, deleteMs = 35, holdMs = 2200, pauseMs = 400 }: Options = {},
+) {
+	const [index, setIndex] = useState(0);
+	const [length, setLength] = useState(0);
+	const [deleting, setDeleting] = useState(false);
 
-					let currentText = initialText;
-
-					return setInterval(() => {
-						if (currentText.length > 0) {
-							currentText = currentText.slice(0, -1);
-							setText(currentText);
-						} else {
-							setDeletionInterval((d) => {
-								if (d) {
-									clearInterval(d);
-								}
-
-								return null;
-							});
-							setWaitTimeout((wt) => {
-								if (wt !== null) {
-									clearTimeout(wt);
-								}
-
-								return setTimeout(() => {
-									startTyping(
-										currentText,
-										(index + 1) % values.length
-									);
-								}, typingBreakDelay);
-							});
-						}
-					}, deleteRate);
-				});
-			} else {
-				setTypingInterval((ti) => {
-					if (ti !== null) {
-						clearInterval(ti);
-					}
-
-					let currentText = initialText;
-
-					return setInterval(() => {
-						if (currentText !== targetText) {
-							currentText += targetText[currentText.length];
-							setText(currentText);
-						} else {
-							setTypingInterval((a) => {
-								if (a !== null) clearInterval(a);
-
-								return null;
-							});
-
-							setWaitTimeout((wt) => {
-								if (wt !== null) {
-									clearTimeout(wt);
-								}
-
-								return setTimeout(() => {
-									startTyping(currentText, index);
-								}, typingDisplayDelay);
-							});
-						}
-					}, typingRate);
-				});
-			}
-		},
-		[deleteRate, typingBreakDelay, typingDisplayDelay, typingRate, values]
-	);
-
-	/**
-	 * Mainly used for cleanup
-	 */
-	const stopTyping = useCallback(() => {
-		if (deletionInterval !== null) {
-			setDeletionInterval((a) => {
-				if (a !== null) clearInterval(a);
-
-				return null;
-			});
-		}
-
-		if (typingInterval !== null) {
-			setTypingInterval((a) => {
-				if (a !== null) clearInterval(a);
-
-				return null;
-			});
-		}
-
-		if (waitTimeout !== null) {
-			setWaitTimeout((a) => {
-				if (a !== null) clearTimeout(a);
-
-				return null;
-			});
-		}
-	}, [deletionInterval, typingInterval, waitTimeout]);
+	const target = words[index % words.length] ?? "";
 
 	useEffect(() => {
-		startTyping("", startIndex);
+		if (words.length === 0) return;
+		let delay = deleting ? deleteMs : typeMs;
 
-		return stopTyping;
+		if (!deleting && length === target.length) delay = holdMs;
+		if (deleting && length === 0) delay = pauseMs;
 
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
+		const timer = setTimeout(() => {
+			if (!deleting && length === target.length) {
+				setDeleting(true);
+			} else if (deleting && length === 0) {
+				setDeleting(false);
+				setIndex((i) => (i + 1) % words.length);
+			} else {
+				setLength((l) => l + (deleting ? -1 : 1));
+			}
+		}, delay);
+
+		return () => clearTimeout(timer);
+	}, [deleting, length, target, words.length, typeMs, deleteMs, holdMs, pauseMs]);
 
 	return {
-		text: text,
-		isTyping: typingInterval !== null || deletionInterval !== null,
+		text: target.slice(0, length),
+		idle: !deleting && length === target.length,
 	};
 }
