@@ -153,18 +153,18 @@ export const projects: Project[] = [
 		},
 	},
 	{
-		repo: "osu-ai",
+		repo: "osu-auto",
 		title: "osu! AI",
 		summary:
-			"A neural network that learned to play a rhythm game by watching recorded plays.",
+			"An AI that plays a rhythm game from the screen alone, trained by watching the game's autoplay.",
 		blurb:
-			"PyTorch networks that aim and click in the rhythm game osu!, trained on replays captured through a modified danser-go.",
+			"A small conv net that sees only the last few frames of osu!lazer and decides where to aim and when to click, 100 times a second. Trained by behaviour cloning on autoplay rendered offscreen by a modified lazer, on ranked and generated maps, and played by a native C++ runner with ONNX Runtime on CUDA.",
 		group: "vision",
-		tech: ["python", "pytorch", "opencv", "numpy"],
+		tech: ["python", "pytorch", "cpp", "csharp"],
 		featured: false,
-		links: [{ label: "Video", href: "https://www.youtube.com/watch?v=YEoSrtow8Qw" }],
+		links: [{ label: "Old version video", href: "https://www.youtube.com/watch?v=YEoSrtow8Qw" }],
 		fallback: {
-			description: "Aiming and clicking with pytorch networks in the game osu!",
+			description: "An AI that plays osu!lazer from pixels only, trained by behaviour cloning on autoplay.",
 			language: "Python",
 		},
 	},
