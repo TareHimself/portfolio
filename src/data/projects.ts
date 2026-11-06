@@ -103,19 +103,22 @@ export const projects: Project[] = [
 		},
 	},
 	{
-		repo: "relay",
-		title: "Relay",
+		repo: "osu-auto",
+		title: "osu! AI",
 		summary:
-			"Shared documents that people and AI assistants read and edit together, hosted on your own server.",
+			"An AI that plays a rhythm game from the screen alone, trained by watching the game's autoplay.",
 		blurb:
-			"Self-hosted, git-backed markdown store where people and AI agents edit documents together. Pages are plain files in a git repo, with anchored comment threads, a REST API, an MCP server for agents and a React UI. Docker and Tailscale ready.",
-		group: "tooling",
-		tech: ["typescript", "react", "node", "docker"],
+			"A small conv net that sees only the last few frames of osu!lazer and decides where to aim and when to click, 100 times a second. Trained by behaviour cloning on autoplay rendered offscreen by a modified lazer, on ranked and generated maps, and played by a native C++ runner with ONNX Runtime on CUDA.",
+		group: "vision",
+		tech: ["python", "pytorch", "cpp", "csharp"],
 		featured: true,
+		links: [
+			{ label: "Video", href: "https://www.youtube.com/watch?v=tFMnvKfLdYs" },
+			{ label: "Old version video", href: "https://www.youtube.com/watch?v=YEoSrtow8Qw" },
+		],
 		fallback: {
-			description:
-				"Self-hosted, git-backed markdown store where people and AI agents edit docs together",
-			language: "TypeScript",
+			description: "An AI that plays osu!lazer from pixels only, trained by behaviour cloning on autoplay.",
+			language: "Python",
 		},
 	},
 	{
@@ -153,19 +156,19 @@ export const projects: Project[] = [
 		},
 	},
 	{
-		repo: "osu-auto",
-		title: "osu! AI",
+		repo: "relay",
+		title: "Relay",
 		summary:
-			"An AI that plays a rhythm game from the screen alone, trained by watching the game's autoplay.",
+			"Shared documents that people and AI assistants read and edit together, hosted on your own server.",
 		blurb:
-			"A small conv net that sees only the last few frames of osu!lazer and decides where to aim and when to click, 100 times a second. Trained by behaviour cloning on autoplay rendered offscreen by a modified lazer, on ranked and generated maps, and played by a native C++ runner with ONNX Runtime on CUDA.",
-		group: "vision",
-		tech: ["python", "pytorch", "cpp", "csharp"],
+			"Self-hosted, git-backed markdown store where people and AI agents edit documents together. Pages are plain files in a git repo, with anchored comment threads, a REST API, an MCP server for agents and a React UI. Docker and Tailscale ready.",
+		group: "tooling",
+		tech: ["typescript", "react", "node", "docker"],
 		featured: false,
-		links: [{ label: "Old version video", href: "https://www.youtube.com/watch?v=YEoSrtow8Qw" }],
 		fallback: {
-			description: "An AI that plays osu!lazer from pixels only, trained by behaviour cloning on autoplay.",
-			language: "Python",
+			description:
+				"Self-hosted, git-backed markdown store where people and AI agents edit docs together",
+			language: "TypeScript",
 		},
 	},
 	{
