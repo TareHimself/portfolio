@@ -104,7 +104,7 @@ export const projects: Project[] = [
 	},
 	{
 		repo: "osu-auto",
-		title: "osu! AI",
+		title: "osu-auto",
 		summary:
 			"An AI that plays a rhythm game from the screen alone, trained by watching the game's autoplay.",
 		blurb:
